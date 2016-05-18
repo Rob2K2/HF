@@ -24,3 +24,72 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+
+'Window[platform=ios]': {
+	//barColor: Alloy.CFG.voColor,
+	backgroundColor: "#CEE3F6"
+	//navTintColor:'#FFFFFF'
+
+}
+
+'Window[platform=android]': {
+	backgroundColor: "#CEE3F6"
+}
+
+'Label':{
+	width: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
+	font: {
+		fontFamily: 'Helvetica Neue',
+		fontSize: '14dp',
+		fontweight: 'normal'
+	},
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+	color: "#000000",
+	ellipsize: true,
+	wordWrap: false
+}
+
+'TextField':{
+	editable: true,
+	autocorrect: false,
+	//borderColor: '#000000',
+	//backgroundColor: '#FFFFFF',
+	paddingLeft: '12dp',
+	keyboardType: Titanium.UI.KEYBOARD_TYPE_DEFAULT,
+	color: '#336699',
+	height: '44dp',
+	width: '85%',
+	font: {
+		fontFamily: 'Helvetica Neue',
+		fontSize: '14dp',
+		fontweight: 'normal'
+	},
+	hintTextColor: '#2B87D9',
+	tintColor: '#000000',
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	clearButtonMode: Ti.UI.INPUT_BUTTONMODE_ALWAYS
+}
+
+'Button':{
+	backgroundColor: '#CC0000',
+	color: '#FFFFFF',
+	height: '44dp',
+	width: '85%',
+	bottom: '0dp',
+	top: '0dp',
+	//systemButton: Ti.UI.iPhone.SystemButton.CANCEL
+	//borderRadius: 5
+}
+
+'ScrollView' :{
+	top: '0dp',
+	width: '100%',
+	bottom: '0dp',
+	contentHeight: 'auto',
+	showVerticalScrollIndicator: true,
+	scrollType: 'vertical'
+	 
+	
+}

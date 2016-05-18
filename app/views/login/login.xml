@@ -1,0 +1,13 @@
+<Alloy>
+    <Window navBarHidden="true" >
+        <ScrollView layout="vertical">
+            <View id="loginContainer"  layout="vertical" >
+                <ImageView id="imgLogo"/>
+                <TextField id="username" hintText="L('hTxtUsername')" />
+                <TextField id="password" hintText="L('hTxtPassword')" />
+                <Button id="btnLogin" title="L('btnLogin')" onClick="doClick" />
+                <Label id="lblYear" text="L('lblYear')"></Label>
+            </View>
+        </ScrollView>
+    </Window>
+</Alloy>

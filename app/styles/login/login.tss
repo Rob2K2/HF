@@ -1,0 +1,36 @@
+'#imgLogo':{
+	width: 250,
+	heigth: 53,
+	image: '/images/logo.png',
+	bottom: '25dp'
+}
+
+'#username':{
+	top: '10dp'
+}
+'#password':{
+	top: '10dp',
+	passwordMask: true
+}
+
+'#btnLogin':{
+	top: '10dp'
+}
+
+"#loginContainer": {
+	top: Alloy.Globals.loginTop,
+	height: Ti.UI.SIZE
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#0000FF"
+}
+
+"#lblYear": {
+	font: {
+		fontSize: 10
+	},
+	top: '10dp'
+}
