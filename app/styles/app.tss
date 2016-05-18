@@ -27,7 +27,7 @@ overrode the settings with other TSS, XML, or JS settings:
 
 'Window[platform=ios]': {
 	//barColor: Alloy.CFG.voColor,
-	backgroundColor: "#CEE3F6"
+	backgroundColor: "#FFFFFF"
 	//navTintColor:'#FFFFFF'
 
 }
@@ -65,7 +65,7 @@ overrode the settings with other TSS, XML, or JS settings:
 		fontSize: '14dp',
 		fontweight: 'normal'
 	},
-	hintTextColor: '#2B87D9',
+	hintTextColor: '#BDBDBD',
 	tintColor: '#000000',
 	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
 	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
@@ -73,8 +73,8 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 'Button':{
-	backgroundColor: '#CC0000',
-	color: '#FFFFFF',
+	//backgroundColor: '#CC0000',
+	color: '#0000FF',
 	height: '44dp',
 	width: '85%',
 	bottom: '0dp',

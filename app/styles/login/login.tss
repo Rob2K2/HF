@@ -1,6 +1,6 @@
 '#imgLogo':{
-	width: 250,
-	heigth: 53,
+	width: 350,
+	heigth: 75,
 	image: '/images/logo.png',
 	bottom: '25dp'
 }
@@ -25,7 +25,7 @@
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
-	color: "#0000FF"
+	color: "#000000"
 }
 
 "#lblYear": {
