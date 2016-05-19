@@ -9,8 +9,8 @@ function doClick(e) {
     var arg = {
         containingWindow: navGroupModule    
     };
-    var dashboardWindow = Alloy.createController('dashboard/dashboard', arg).getView();
-    navGroupModule.openWindow(dashboardWindow, true);
+    var searchWindow = Alloy.createController('search/search', arg).getView();
+    navGroupModule.openWindow(searchWindow, true);
     
 }
 

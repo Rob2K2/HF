@@ -1,0 +1,4 @@
+"#searchContainer": {
+	top: Alloy.Globals.loginTop,
+	height: Ti.UI.SIZE
+}

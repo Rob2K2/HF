@@ -9,6 +9,11 @@
     <string name="lblYear">2016</string>
     <string name="lblLogout">Logout</string>
     <string name="logoutLabelText">Are you sure?</string>
+    <string name="hTxtSearch">Enter word to search</string>
+    <string name="btnSearch">Search</string>
+    <string name="btnAdvanced">Advanced</string>
+    <string name="btnMap">Map</string>
+    <string name="btnAccount">Account</string>
 
     <!-- HTTP Cient-->
     <string name="networkConnectionTimeoutErrorMsg">Check your internet connection and try again.</string>

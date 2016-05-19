@@ -1,0 +1,9 @@
+<Alloy>
+	<Window id="search"   >
+		<RightNavButton id="ctrlLogout" title="L('lblLogout')" onClick="logout" platform="ios" />
+		<View id="searchContainer"  layout="vertical" >
+			<TextField id="txtSearch" hintText="L('hTxtSearch')" />
+			<Button id="btnSearch" title="L('btnSearch')" onClick="doClick" />
+		</View>
+	</Window>
+</Alloy>
