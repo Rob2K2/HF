@@ -15,6 +15,11 @@
 // ACS for your application and then fire an event (see below)
 // when connected or errored. if you do not use ACS in your
 // application as a client, you should remove this block
+
+var c_version = 'C_DB_1';
+Ti.App.Properties.setString('databaseVersion', c_version);
+Alloy.Globals.configDB = require('./db/database');
+
 Alloy.Globals.NavGroupModule = require('navigation/NavGroupModule');
 
 if (OS_IOS) {

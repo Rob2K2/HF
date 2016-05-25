@@ -1,63 +1,158 @@
 var args = arguments[0] || {};
 
 var controls = require('controls/controls'),
+    configDB = Alloy.Globals.configDB,
+    dbs = new configDB(),
     NavGroupModule = Alloy.Globals.NavGroupModule,
     navGroupModule = new NavGroupModule($.dashboard);
 
 $.dashboard.title = 'Dashboard';
 
 var loginClick = function(e) {
-    Ti.API.info('e-> ' + JSON.stringify(e));
-    if (e.index === 1) {
-        var loginWindows = Alloy.createController('login/login').getView();
-        loginWindows.open();
-    }
+	Ti.API.info('e-> ' + JSON.stringify(e));
+	if (e.index === 1) {
+		var loginWindows = Alloy.createController('login/login').getView();
+		loginWindows.open();
+	}
 };
 
 var logout = function() {
-    //alert('press logout');
+	//alert('press logout');
 
-    var param = {
-        buttonNames : ['Cancel', 'Accept'],
-        message : L('logoutLabelText'),
-        callback : loginClick
-    };
+	var param = {
+		buttonNames : ['Cancel', 'Accept'],
+		message : L('logoutLabelText'),
+		callback : loginClick
+	};
 
-    controls.alertMsg(param);
+	controls.alertMsg(param);
 };
 
 var searchClick = function(e) {
-    //Ti.API.info('e-> ' + JSON.stringify(e));
-    if (e.index === 1) {
-        var searchWindows = Alloy.createController('search/search').getView();
-        searchWindows.open();
-    }
+	if (e.index === 1) {
+		var searchWindows = Alloy.createController('search/search').getView();
+		searchWindows.open();
+	}
 };
 
 var search = function() {
-    
-    var param = {
-        buttonNames : ['Cancel', 'Accept'],
-        message : L('logoutLabelText'),
-        callback : searchClick
-    };
 
-    controls.alertMsg(param);
+	var param = {
+		buttonNames : ['Cancel', 'Accept'],
+		message : L('searchLabelText'),
+		callback : searchClick
+	};
+
+	controls.alertMsg(param);
 };
 
-var openMap = function(){
-    var arg = {
+var openMap = function() {
+	var arg = {
 		containingWindow : navGroupModule
 	};
 	var mapWindow = Alloy.createController('map/map', arg).getView();
 	navGroupModule.openWindow(mapWindow, true);
 };
 
+var listOfAlbum = {
+	"resultCount" : 3,
+	"results" : [{
+		"hotelId" : 89034,
+		"name" : "HOTEL AMERICANA",
+		"distance" : "2 km",
+		"urlPhoto" : "http://is3.mzstatic.com/image/thumb/Music/v4/e5/71/5c/e5715c6d-a186-6787-a175-2b69c20202d7/source/100x100bb.jpg",
+		"price" : "50"
+	}, {
+		"hotelId" : 89035,
+		"name" : "HOTEL REGINA",
+		"distance" : "3 km",
+		"urlPhoto" : "http://is1.mzstatic.com/image/thumb/Music1/v4/51/2a/76/512a768b-23f6-326e-6532-60bc96aaaa68/source/100x100bb.jpg",
+		"price" : "90"
+	}, {
+		"hotelId" : 89036,
+		"name" : "HOTEL HILTON",
+		"distance" : "1 km",
+		"urlPhoto" : "http://is5.mzstatic.com/image/thumb/Music3/v4/f6/f9/63/f6f963a9-2227-e928-04a3-38f8aac0f937/source/100x100bb.jpg",
+		"price" : "100"
+	}]
+};
+
+var saveInfo = function(args) {
+    Ti.API.info('=> saveInfo() ' + JSON.stringify(args));
+    for (var a = 0; a < args.length; a++) {
+
+        dbs.addHotel(args[a]);
+    }
+    //dbs.getListSongsFromDB();
+    
+};
+
+var getListOfAlbums = function() {
+
+	var getListOfAlbums = Ti.App.Properties.getString('urlSearch');
+	getListOfAlbums = getListOfAlbums + 'term=mana&limit=6';
+	Ti.API.info('-> Dentro de init/ getListOfAlbums url : ' + getListOfAlbums);
+	function callbackFunctionOnSuccess(jsonData) {
+		if ((jsonData != null || jsonData != undefined || jsonData.resultsCount > 0)) {
+			Ti.API.info(' => ' + JSON.stringify(jsonData));
+			Ti.API.info(' =>' + jsonData.resultCount);
+			dbs.deleteData();
+			saveInfo(jsonData.results);
+			drawTableAlbums(jsonData);
+			//var dataOffLine = dbs.getListSongsFromDB();
+			//drawTableAlbums(dataOffLine[0]);
+
+		} else {
+			Titanium.UI.createAlertDialog({
+				title : L('appTitle'),
+				message : "Intenta otra busqueda",
+				buttonNames : ['Ok']
+			}).show();
+		}
+	};
+
+	httpClientModule.callWithHttpClient(getListOfAlbums, callbackFunctionOnSuccess, 'GET', '');
+};
+
 var init = function() {
-	//loadTableAlbums(listOfAlbum);
+	dbs.deleteData();
+	saveInfo(listOfAlbum.results);
+	drawTableAlbums(listOfAlbum);
 	//getListOfAlbums();
 
 };
+
+var drawTableAlbums = function(_data) {
+	Ti.API.info(' loadTableAlbums() data: ' + JSON.stringify(_data));
+	$.tableAlbums.setData([]);
+
+	var dataList = [];
+
+	for (var i = 0; i < _data.results.length; i++) {
+		var rowSong = _data.results[i];
+
+		var params = {
+			jsonData : rowSong
+		};
+		var row = Alloy.createController('dashboard/rowHotels', params).getView();
+		dataList.push(row);
+	}
+
+	$.tableAlbums.setData(dataList);
+};
+
+var openCoverFlow = function(e) {
+    var arg = {};
+    if (OS_IOS) {
+        arg = {
+            containingWin : navGroupModule
+        };
+
+    } 
+    var dbWindow = Alloy.createController('detail/detail', arg).getView();
+    navGroupModule.openWindow(dbWindow, true);
+}; 
+
 init();
 
 if (OS_IOS) {

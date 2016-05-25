@@ -34,7 +34,6 @@ function doClick(e) {
 	};
 	var dashboardWindow = Alloy.createController('dashboard/dashboard', arg).getView();
 	navGroupModule.openWindow(dashboardWindow, false);
-
 }
 
 var initialize = function() {
@@ -47,8 +46,9 @@ var init = function() {
 	initialize();
 
 };
+
 init();
 
-if (OS_IOS) {
-	navGroupModule.open();
-}
+//if (OS_IOS) {
+navGroupModule.open();
+//}

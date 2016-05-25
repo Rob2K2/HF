@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <!--Login-->
-    
-    <string name="appTitle">Hotel Finder</string>
-    <string name="hTxtUsername">Username</string>
-    <string name="hTxtPassword">Password</string>
-    <string name="btnLogin">Login</string>
-    <string name="lblYear">2016</string>
-    <string name="lblLogout">Logout</string>
-    <string name="logoutLabelText">Are you sure?</string>
-    <string name="hTxtSearch">Enter word to search</string>
-    <string name="btnSearch">Search</string>
-    <string name="btnAdvanced">Advanced</string>
-    <string name="btnMap">Map</string>
-    <string name="btnAccount">Account</string>
+	<!--Login-->
 
-    <!-- HTTP Cient-->
-    <string name="networkConnectionTimeoutErrorMsg">Check your internet connection and try again.</string>
-    <string name="networkConnectionUnhandledErrorMsg">There was a problem connecting to the server. Please try again later.</string>
-    <string name="networkConnectionCannotConnectErrorMsg">Could not connect to server.</string>
-        
+	<string name="appTitle">Hotel Finder</string>
+	<string name="hTxtUsername">Username</string>
+	<string name="hTxtPassword">Password</string>
+	<string name="btnLogin">Login</string>
+	<string name="lblYear">2016</string>
+	
+	
+	<!--Search-->
+	<string name="hTxtSearch">Enter word to search</string>
+	<string name="btnSearch">Search</string>
+
+	<!--Dashboard-->
+	<string name="lblLogout">Logout</string>
+	<string name="btnAdvanced">Advanced</string>
+	<string name="btnMap">Map</string>
+	<string name="btnAccount">Account</string>
+	<string name="logoutLabelText">Logging out, are you sure?</string>
+	<string name="searchLabelText">New search, are you sure?</string>
+
+	<!-- HTTP Cient-->
+	<string name="networkConnectionTimeoutErrorMsg">Check your internet connection and try again.</string>
+	<string name="networkConnectionUnhandledErrorMsg">There was a problem connecting to the server. Please try again later.</string>
+	<string name="networkConnectionCannotConnectErrorMsg">Could not connect to server.</string>
+
 </resources>

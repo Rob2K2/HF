@@ -1,0 +1,18 @@
+<Alloy>
+    <TableViewRow id='rowHotel' layout="horizontal" onClick="doClickRow">
+        <View layout="horizontal" >
+            <View id='containerImg'  layout="vertical">
+                <ImageView id='imgAlbum'/>
+            </View>
+            <View id='containerSection' layout="vertical">
+                <Label id="lblName" class="row1"/>
+                <Label id="lblDistance" class="row2"/>
+                <View layout="horizontal" height="Ti.UI.SIZE">
+                    <ImageView id='imgPrice'/>
+                    <Label id="lblPrice" class="row2 cGreen"></Label>
+                    <Label id="lblCurrency" class="row2 cGreen"></Label>
+                </View>
+            </View>
+        </View>
+    </TableViewRow>
+</Alloy>

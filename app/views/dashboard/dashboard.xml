@@ -1,13 +1,13 @@
 <Alloy>
 	<Window id="dashboard"   >
 		<RightNavButton id="ctrlLogout" title="L('lblLogout')" onClick="logout" platform="ios" />
-		<LeftNavButton id="ctrlSearch" title="L('lblLogout')" onClick="search" platform="ios" systemButton="Ti.UI.iPhone.SystemButton.SEARCH" />
+		<LeftNavButton id="ctrlSearch" onClick="search" platform="ios" systemButton="Ti.UI.iPhone.SystemButton.SEARCH" />
 		<TableView id="tableAlbums" >
 			<TableViewSection></TableViewSection>
 		</TableView>
 		<Toolbar platform="ios" id='menuToolBar' >
 			<Items>
-				<Button id="btnAdvanced" title="L('btnAdvanced')" />
+				<Button id="btnAdvanced" title="L('btnAdvanced')" onClick="openCoverFlow"/>
 				<FlexSpace/>
 				<Button id="btnMap" title = "L('btnMap')" onClick="openMap" />
 				<FlexSpace/>

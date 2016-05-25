@@ -1,3 +1,7 @@
+'#tableAlbums' :{
+	top: 0,
+	scrollable: true
+}
 '#menuToolBar':{
 	bottom: 0
 	

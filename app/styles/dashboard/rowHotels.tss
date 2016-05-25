@@ -1,0 +1,59 @@
+'#rowHotel':{
+	//hasChild: false,
+	width: Ti.UI.FILL,
+	height: '100dp'
+}
+
+'#containerImg':{
+	top: 0,
+	left: 0,
+	width: '100dp',
+	height: '100dp'
+}
+'#containerSection':{
+	top: '0dp',
+	height: '100dp'
+	
+}
+'#containerSection[platform=android]':{
+	width: "70%"
+}
+
+'#imgAlbum' :{
+	top: 0,
+	left: 0,
+	width: '100dp',
+	height: '100dp'
+	
+}
+'#imgPrice':{
+	image: 'common/price.png',
+	width: 20,
+	height: 20,
+	left: '10dp',
+	top: '5dp'
+}
+
+'.row1':{
+	font: {
+		fontSize: '16dp',
+		fontweight: 'bold'
+	},
+	color: '#000000',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	left : '10dp',
+	top: '6dp'
+}
+'.row2':{
+	font: {
+		fontSize: '14dp'
+	},
+	color: '#999999',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	left : '10dp',
+	top: '6dp',
+	
+}
+'.cGreen':{
+	color: '#006600'
+}
