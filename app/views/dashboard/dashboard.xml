@@ -2,7 +2,7 @@
 	<Window id="dashboard"   >
 		<RightNavButton id="ctrlLogout" title="L('lblLogout')" onClick="logout" platform="ios" />
 		<LeftNavButton id="ctrlSearch" onClick="search" platform="ios" systemButton="Ti.UI.iPhone.SystemButton.SEARCH" />
-		<TableView id="tableAlbums" >
+		<TableView id="tableHotels" onClick="doClickTable">
 			<TableViewSection></TableViewSection>
 		</TableView>
 		<Toolbar platform="ios" id='menuToolBar' >

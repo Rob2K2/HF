@@ -16,6 +16,10 @@
 // when connected or errored. if you do not use ACS in your
 // application as a client, you should remove this block
 
+Ti.App.Properties.setString('urlSearch', 'https://itunes.apple.com/search?');
+
+Alloy.Globals.HttpClientModule = require('./network/HttpClientModule');
+
 var c_version = 'C_DB_1';
 Ti.App.Properties.setString('databaseVersion', c_version);
 Alloy.Globals.configDB = require('./db/database');

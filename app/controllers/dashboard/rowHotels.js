@@ -19,18 +19,14 @@ $.lblPrice.text = lblPrice;
 $.lblCurrency.text = "$us";
 
 var doClickRow = function(e) {
-	var arg = {};
 	if (OS_IOS) {
-		Ti.API.info('**************** click en la row y estamos en IOS rowHotel.js *****************');
-		arg = {
-			containingWin : navGroupModule
-		};
-	} else {
-		arg = {
-			rowData : args
-		};
+        
+    } else {
+        var arg = {
+            rowData : args
+        };
 
-		var detailWindow = Alloy.createController('dashboard/detail', arg).getView();
-		navGroupModule.openWindow(detailWindow, false);
-	}
-}; 
+        var detailWindow = Alloy.createController('detail/detail2', arg).getView();
+        navGroupModule.openWindow(detailWindow, true);
+    }
+};

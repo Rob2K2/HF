@@ -124,7 +124,7 @@ var init = function() {
 
 var drawTableAlbums = function(_data) {
 	Ti.API.info(' loadTableAlbums() data: ' + JSON.stringify(_data));
-	$.tableAlbums.setData([]);
+	$.tableHotels.setData([]);
 
 	var dataList = [];
 
@@ -138,7 +138,7 @@ var drawTableAlbums = function(_data) {
 		dataList.push(row);
 	}
 
-	$.tableAlbums.setData(dataList);
+	$.tableHotels.setData(dataList);
 };
 
 var openCoverFlow = function(e) {
@@ -152,6 +152,17 @@ var openCoverFlow = function(e) {
     var dbWindow = Alloy.createController('detail/detail', arg).getView();
     navGroupModule.openWindow(dbWindow, true);
 }; 
+
+var doClickTable = function (){
+    if (OS_IOS) {
+        var arg = {
+            containingWindow : navGroupModule
+        };
+
+        var detailWindow = Alloy.createController('detail/detail2', arg).getView();
+        navGroupModule.openWindow(detailWindow);
+    }
+};
 
 init();
 

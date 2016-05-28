@@ -1,5 +1,19 @@
 <Alloy>
-    <Window id="detail2">
-       
-    </Window>
+	<TabGroup backgroundColor="white" >
+		<Tab id="tab1" title="Tab 1" icon="KS_nav_views.png">
+			<Window id="win1" title="Tab 1">
+				<Label id="label1" color="blue">I am Window 1</Label>
+			</Window>
+		</Tab>
+		<Tab id="tab2" title="Tab 2" icon="KS_nav_views.png">
+			<Window id="win2" title="Tab 2">
+				<Label id="label2" color="yellow">I am Window 2</Label>
+			</Window>
+		</Tab>
+		<Tab id="tab2" title="Tab 3" icon="KS_nav_views.png">
+			<Window id="win3" title="Tab 3">
+				<Label id="label2" color="red">I am Window 3</Label>
+			</Window>
+		</Tab>
+	</TabGroup>
 </Alloy>

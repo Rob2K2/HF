@@ -3,6 +3,5 @@
         <TableView id="tableHotelsDb" >
             <TableViewSection></TableViewSection>
         </TableView>
-
     </Window>
 </Alloy>
