@@ -10,7 +10,7 @@ function doClick(e) {
         containingWindow: navGroupModule    
     };
     var searchWindow = Alloy.createController('search/search', arg).getView();
-    navGroupModule.openWindow(searchWindow, true);
+    navGroupModule.openWindow(searchWindow, false);
     
 }
 

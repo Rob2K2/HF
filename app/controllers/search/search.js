@@ -7,24 +7,43 @@ var NavGroupModule = Alloy.Globals.NavGroupModule,
 $.search.title = 'Search';
 
 var loginClick = function(e) {
-    Ti.API.info('e-> ' + JSON.stringify(e));
-    if (e.index === 1) {
-        var loginWindows = Alloy.createController('login/login').getView();
-        loginWindows.open();
-    }
+	Ti.API.info('e-> ' + JSON.stringify(e));
+	if (e.index === 1) {
+		var loginWindows = Alloy.createController('login/login').getView();
+		loginWindows.open();
+	}
 };
 
 var logout = function() {
-    //alert('press logout');
+	
+	var param = {
+		buttonNames : ['Cancel', 'Accept'],
+		message : L('logoutLabelText'),
+		callback : loginClick
+	};
 
-    var param = {
-        buttonNames : ['Cancel', 'Accept'],
-        message : L('logoutLabelText'),
-        callback : loginClick
-    };
-
-    controls.alertMsg(param);
+	controls.alertMsg(param);
 };
+
+$.search.addEventListener('open', function() {
+
+    if (OS_ANDROID) {
+        var activity = $.search.getActivity();
+        if (activity) {
+            activity.onCreateOptionsMenu = function(e) {
+                var optLogout,                   
+                    menu;
+                menu = e.menu;
+                menu.clear();
+                optLogout = menu.add({
+                    title : L('lblLogout'),
+                    showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+                });
+                optLogout.addEventListener('click', logout);
+            };
+        }
+    }
+});
 
 function doClick(e) {
 
@@ -47,8 +66,12 @@ var init = function() {
 
 };
 
+$.search.addEventListener('android:back', function() {
+    logout();
+});
+
 init();
 
-//if (OS_IOS) {
+if (OS_IOS) {
 navGroupModule.open();
-//}
+}

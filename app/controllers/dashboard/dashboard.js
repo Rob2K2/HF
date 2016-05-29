@@ -54,6 +54,49 @@ var openMap = function() {
 	navGroupModule.openWindow(mapWindow, true);
 };
 
+$.dashboard.addEventListener('open', function() {
+
+    if (OS_ANDROID) {
+        var activity = $.dashboard.getActivity();
+        if (activity) {
+            activity.onCreateOptionsMenu = function(e) {
+                var optLogout,
+                    optAdvanced,
+                    optMap,
+                    optAccount,
+                    menu;
+                menu = e.menu;
+                menu.clear();
+                optLogout = menu.add({
+                    title : L('lblLogout'),
+                    showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+                });
+                optLogout.addEventListener('click', logout);
+                optAdvanced = menu.add({
+                    title : 'Advanced Search',
+                    showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+                });
+                optAdvanced.addEventListener('click', openCoverFlow);
+                
+                optMap = menu.add({
+                    title: 'Map',
+                    showAsAction: Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+                });
+                optMap.addEventListener('click', openMap);
+                
+                optAccount = menu.add({
+                    title: 'Account',
+                    showAsAction: Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+                });
+                //optAccount.addEventListener('click', openMap);
+            };
+
+        }
+
+    }
+
+});
+
 var listOfAlbum = {
 	"resultCount" : 3,
 	"results" : [{
@@ -163,6 +206,10 @@ var doClickTable = function (){
         navGroupModule.openWindow(detailWindow);
     }
 };
+
+$.dashboard.addEventListener('android:back', function() {
+    search();
+});
 
 init();
 

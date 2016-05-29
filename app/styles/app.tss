@@ -33,7 +33,7 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 'Window[platform=android]': {
-	backgroundColor: "#CEE3F6"
+	backgroundColor: "#FFFFFF"
 }
 
 'Label':{
