@@ -2,6 +2,7 @@ var args = arguments[0] || {};
 
 Ti.API.info('**************** rowHotels.js *****************');
 Ti.API.info('args: ' + JSON.stringify(args));
+//Ti.API.info('=>name: ' + JSON.stringify(args.rowData));
 
 var NavGroupModule = Alloy.Globals.NavGroupModule,
     navGroupModule = new NavGroupModule($.rowHotel);

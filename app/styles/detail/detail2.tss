@@ -1,0 +1,113 @@
+'#winInfo':{
+	layout: "vertical"
+}
+
+'#winPrice':{
+	layout: "vertical"
+}
+
+'#winMap':{
+	layout: "vertical"
+}
+
+'#scrollView': {
+
+	layout: 'vertical',
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.FILL
+}
+
+'View': {
+	//top: Alloy.Globals.loginTop,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+}
+
+'#vwDistance': {
+	//top: Alloy.Globals.loginTop,
+	height: Ti.UI.SIZE,
+	layout: "horizontal"
+}
+/*
+'#containerImg':{
+top: 0,
+left: 0,
+width: Titanium.UI.FILL,
+height: Titanium.UI.SIZE,
+backgroundColor: "red"
+}
+'#containerSection':{
+top: '0dp',
+height: '100dp',
+backgroundColor: "yellow"
+}
+'#containerSection[platform=android]':{
+width: "70%"
+}
+*/
+'#imgHotel':{
+
+	width: '100%',
+	//height: '300dp'
+	bottom: 15
+}
+'#imgHotel2':{
+
+	width: '100%',
+	//height: '300dp'
+	bottom: 15
+}
+
+'#imgPrice':{
+	image: 'common/price.png',
+	width: 20,
+	height: 20,
+	left: '10dp',
+	top: '5dp'
+}
+
+'.row1':{
+	font: {
+		fontSize: '20dp',
+		fontweight: 'bold'
+	},
+	color: '#000000',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+	left: '10dp',
+	top: '6dp'
+}
+
+
+'.cGreen':{
+	color: '#006600'
+}
+
+'.lblDetail': {
+	ellipsize: false,
+	wordWrap: true,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	left: 15,
+	right: 10,
+	bottom: 5
+}
+
+'.lblTitle':{
+	font: {
+		fontSize: '20dp',
+		fontWeight: 'bold'
+	},
+	color: '#000000',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_RIGHT,
+	top: '5dp'
+}
+
+'.lblSubTitle':{
+	font: {
+		fontSize: '14dp',
+		fontWeight: 'bold'
+	},
+	color: '#000',
+	//textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	left: '15dp',
+	top: '6dp'
+}
