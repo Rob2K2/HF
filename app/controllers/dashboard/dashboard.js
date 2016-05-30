@@ -56,78 +56,174 @@ var openMap = function() {
 
 $.dashboard.addEventListener('open', function() {
 
-    if (OS_ANDROID) {
-        var activity = $.dashboard.getActivity();
-        if (activity) {
-            activity.onCreateOptionsMenu = function(e) {
-                var optLogout,
-                    optAdvanced,
-                    optMap,
-                    optAccount,
-                    menu;
-                menu = e.menu;
-                menu.clear();
-                optLogout = menu.add({
-                    title : L('lblLogout'),
-                    showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
-                });
-                optLogout.addEventListener('click', logout);
-                optAdvanced = menu.add({
-                    title : 'Advanced Search',
-                    showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
-                });
-                optAdvanced.addEventListener('click', openCoverFlow);
-                
-                optMap = menu.add({
-                    title: 'Map',
-                    showAsAction: Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
-                });
-                optMap.addEventListener('click', openMap);
-                
-                optAccount = menu.add({
-                    title: 'Account',
-                    showAsAction: Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
-                });
-                //optAccount.addEventListener('click', openMap);
-            };
+	if (OS_ANDROID) {
+		var activity = $.dashboard.getActivity();
+		if (activity) {
+			activity.onCreateOptionsMenu = function(e) {
+				var optLogout,
+				    optAdvanced,
+				    optMap,
+				    optAccount,
+				    menu;
+				menu = e.menu;
+				menu.clear();
+				optLogout = menu.add({
+					title : L('lblLogout'),
+					showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+				});
+				optLogout.addEventListener('click', logout);
+				optAdvanced = menu.add({
+					title : 'Advanced Search',
+					showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+				});
+				optAdvanced.addEventListener('click', openCoverFlow);
 
-        }
+				optMap = menu.add({
+					title : 'Map',
+					showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+				});
+				optMap.addEventListener('click', openMap);
 
-    }
+				optAccount = menu.add({
+					title : 'Account',
+					showAsAction : Ti.Android.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW
+				});
+				//optAccount.addEventListener('click', openMap);
+			};
+
+		}
+
+	}
 
 });
 
 var listOfAlbum = {
 	"resultCount" : 3,
 	"results" : [{
-		"hotelId" : 89034,
+		"hotelId" : 1,
 		"name" : "HOTEL AMERICANA",
 		"distance" : "2 km",
-		"urlPhoto" : "http://is3.mzstatic.com/image/thumb/Music/v4/e5/71/5c/e5715c6d-a186-6787-a175-2b69c20202d7/source/100x100bb.jpg",
-		"price" : "50"
+		"urlThumb" : "http://www.macaws.net/hf/images/americanaThumb.jpg",
+		"urlImage" : "http://www.macaws.net/hf/images/americana.jpg",
+		"price" : "50",
+		"web" : "www.hotelamericana.com.bo",
+		"telefono" : "(591)-44239247",
+		"direccion" : "Av. Aroma #450",
+		"resenia" : "AMERICANA HOTEL se encuentra ubicado en el centro de la ciudad de Cochabamba, a pocas cuadras del Centro Comercial y Financiero de la ciudad. Brinda un servicios de calidad a sus huéspedes y ofrece un ambiente cómodo,elegante y cordial.",
+		"habitaciones" : "El hotel le ofrece 54 habitaciones confortables.• Simples• Matrimoniales• Suites Ejecutivas• Suites Matrimoniales• Familiares• Triples• DoblesTodas equipadas con: Frigobar, Televisión por cable, discado directo nacional e internacional, para otorgarle una estadía placentera.",
+		"tarifas" : {
+			"simple" : "80",
+			"doble" : "90",
+			"triple" : "100",
+			"familiar" : "150",
+			"matrimonial" : "200"
+		}
 	}, {
-		"hotelId" : 89035,
+		"hotelId" : 2,
 		"name" : "HOTEL REGINA",
 		"distance" : "3 km",
-		"urlPhoto" : "http://is1.mzstatic.com/image/thumb/Music1/v4/51/2a/76/512a768b-23f6-326e-6532-60bc96aaaa68/source/100x100bb.jpg",
-		"price" : "90"
+		"urlThumb" : "http://www.macaws.net/hf/images/reginaThumb.jpg",
+		"urlImage" : "http://www.macaws.net/hf/images/regina.jpg",
+		"price" : "90",
+		"web" : "www.hotelregina.bo",
+		"telefono" : "(591)-46549247",
+		"direccion" : "Av. Ecologica #4350",
+		"resenia" : "Hotel regina se encuentra en el pleno centro de la ciudad siendo el mejor punto de partida para iniciar sus actividades turísticas, vacacionales o laborales.",
+		"habitaciones" : "Nuestras habitaciones cuentan con WIFI gratuito. Además ponemos a su disposición: Cambio de moneda, Caja de Seguridad, Servicio a la Habitación, Servicio de Lavandería, Servicio de Fax, Telefonía Nacional e Internacional, Canchas de Soccer, Servicio de Restaurant y Snack.",
+		"tarifas" : {
+			"simple" : "100",
+			"doble" : "110",
+			"triple" : "150",
+			"familiar" : "250",
+			"matrimonial" : "400"
+		}
 	}, {
-		"hotelId" : 89036,
-		"name" : "HOTEL HILTON",
+		"hotelId" : 3,
+		"name" : "HOTEL CESAR'S PLAZA",
+		"distance" : "3 km",
+		"urlThumb" : "http://www.macaws.net/hf/images/cesarsplazaThumb.jpg",
+		"urlImage" : "http://www.macaws.net/hf/images/cesarsplaza.jpg",
+		"price" : "90",
+		"web" : "www.cesarsplaza.com.bo",
+		"telefono" : "+591(4)4673276",
+		"direccion" : "C. 25 de mayo #210",
+		"resenia" : "Hotel regina se encuentra en el pleno centro de la ciudad siendo el mejor punto de partida para iniciar sus actividades turísticas, vacacionales o laborales.",
+		"habitaciones" : "Nuestras habitaciones cuentan con WIFI gratuito. Además ponemos a su disposición: Cambio de moneda, Caja de Seguridad, Servicio a la Habitación, Servicio de Lavandería, Servicio de Fax, Telefonía Nacional e Internacional, Canchas de Soccer, Servicio de Restaurant y Snack.",
+		"tarifas" : {
+			"simple" : "110",
+			"doble" : "130",
+			"triple" : "150",
+			"familiar" : "280",
+			"matrimonial" : "420"
+		}
+	}, {
+		"hotelId" : 4,
+		"name" : "HOTEL ARANJUEZ",
+		"distance" : "5 km",
+		"urlThumb" : "http://www.macaws.net/hf/images/aranjuezThumb.jpg",
+		"urlImage" : "http://www.macaws.net/hf/images/aranjuez.jpg",
+		"price" : "90",
+		"web" : "www.hotelaranjuez.bo",
+		"telefono" : "+591(4)4280076",
+		"direccion" : "C. Buenos Aires #563",
+		"resenia" : "Hotel regina se encuentra en el pleno centro de la ciudad siendo el mejor punto de partida para iniciar sus actividades turísticas, vacacionales o laborales.",
+		"habitaciones" : "Nuestras habitaciones cuentan con WIFI gratuito. Además ponemos a su disposición: Cambio de moneda, Caja de Seguridad, Servicio a la Habitación, Servicio de Lavandería, Servicio de Fax, Telefonía Nacional e Internacional, Canchas de Soccer, Servicio de Restaurant y Snack.",
+		"tarifas" : {
+			"simple" : "100",
+			"doble" : "110",
+			"triple" : "150",
+			"familiar" : "250",
+			"matrimonial" : "400"
+		}
+	}, {
+		"hotelId" : 5,
+		"name" : "HOTEL PORTALES",
+		"distance" : "3,5 km",
+		"urlThumb" : "http://www.macaws.net/hf/images/portalesThumb.jpg",
+		"urlImage" : "http://www.macaws.net/hf/images/portales.jpg",
+		"price" : "90",
+		"web" : "www.hotelportales.com.bo",
+		"telefono" : "+591(4)4285444",
+		"direccion" : "Av. Pando #1271",
+		"resenia" : "Hotel regina se encuentra en el pleno centro de la ciudad siendo el mejor punto de partida para iniciar sus actividades turísticas, vacacionales o laborales.",
+		"habitaciones" : "Nuestras habitaciones cuentan con WIFI gratuito. Además ponemos a su disposición: Cambio de moneda, Caja de Seguridad, Servicio a la Habitación, Servicio de Lavandería, Servicio de Fax, Telefonía Nacional e Internacional, Canchas de Soccer, Servicio de Restaurant y Snack.",
+		"tarifas" : {
+			"simple" : "115",
+			"doble" : "125",
+			"triple" : "175",
+			"familiar" : "270",
+			"matrimonial" : "430"
+		}
+	}, {
+		"hotelId" : 6,
+		"name" : "HOTEL DIPLOMAT",
 		"distance" : "1 km",
-		"urlPhoto" : "http://is5.mzstatic.com/image/thumb/Music3/v4/f6/f9/63/f6f963a9-2227-e928-04a3-38f8aac0f937/source/100x100bb.jpg",
-		"price" : "100"
+		"urlThumb" : "http://www.macaws.net/hf/images/diplomatThumb.jpg",
+		"urlImage" : "http://www.macaws.net/hf/images/diplomat.jpg",
+		"price" : "100",
+		"web" : "www.hoteldiplomat.com",
+		"telefono" : "(591)-44235550",
+		"direccion" : "Av. Ballivian #3450",
+		"resenia" : "Estamos ubicados en el prestigioso y elegante paseo “El Prado”, corazón de la ciudad de Cochabamba a sólo 10 minutos del Aeropuerto Internacional Jorge Wilstermann. Nuestra ubicación privilegiada, en la zona comercial y de negocios de Cochabamba, le brindará proximidad a entidades bancarias, empresas comerciales, oficinas civiles administrativas y variedad de restaurantes de comida nacional e internacional. En Hotel Diplomat, le esperamos para darle la bienvenida y brindarle un servicio de calidad durante su estadía en la ciudad de Cochabamba, ciudad tranquila y a la vez llena de vida exuberante, con un clima acogedor, calidez y su amplia y variada cocina, misma que le ha hecho merecedora del reconocimiento como capital gastronómica de Bolivia.",
+		"habitaciones" : "Pensando en su comodidad y tranquilidad, Hotel Diplomat le ofrece habitaciones amplias y confortables con una vista privilegiada al paseo “El Prado” y sus alrededores. De acuerdo a su elección, usted podrá descansar en una de las habitaciones distribuidas en categorías Simple, Doble, Matrimonial y Suite Jr. Nuestras habitaciones están especialmente diseñadas para que usted se sienta en un ambiente de confort y calidez. Adicionalmente, contamos con equipamiento y servicios para garantizar que su estadía con nosotros sea placentera.",
+		"tarifas" : {
+			"simple" : "180",
+			"doble" : "190",
+			"triple" : "200",
+			"familiar" : "250",
+			"matrimonial" : "500"
+		}
 	}]
 };
 
 var saveInfo = function(args) {
-    Ti.API.info('=> saveInfo() ' + JSON.stringify(args));
-    for (var a = 0; a < args.length; a++) {
+	Ti.API.info('=> saveInfo() ' + JSON.stringify(args));
+	for (var a = 0; a < args.length; a++) {
 
-        dbs.addHotel(args[a]);
-    }
-    //dbs.getListSongsFromDB();
-    
+		dbs.addHotel(args[a]);
+	}
+	//dbs.getListSongsFromDB();
+
 };
 
 var getListOfAlbums = function() {
@@ -185,30 +281,30 @@ var drawTableAlbums = function(_data) {
 };
 
 var openCoverFlow = function(e) {
-    var arg = {};
-    if (OS_IOS) {
-        arg = {
-            containingWin : navGroupModule
-        };
+	var arg = {};
+	if (OS_IOS) {
+		arg = {
+			containingWin : navGroupModule
+		};
 
-    } 
-    var dbWindow = Alloy.createController('detail/detail', arg).getView();
-    navGroupModule.openWindow(dbWindow, true);
-}; 
+	}
+	var dbWindow = Alloy.createController('detail/detail', arg).getView();
+	navGroupModule.openWindow(dbWindow, true);
+};
 
-var doClickTable = function (){
-    if (OS_IOS) {
-        var arg = {
-            containingWindow : navGroupModule
-        };
+var doClickTable = function() {
+	if (OS_IOS) {
+		var arg = {
+			containingWindow : navGroupModule
+		};
 
-        var detailWindow = Alloy.createController('detail/detail2', arg).getView();
-        navGroupModule.openWindow(detailWindow);
-    }
+		var detailWindow = Alloy.createController('detail/detail2', arg).getView();
+		navGroupModule.openWindow(detailWindow);
+	}
 };
 
 $.dashboard.addEventListener('android:back', function() {
-    search();
+	search();
 });
 
 init();

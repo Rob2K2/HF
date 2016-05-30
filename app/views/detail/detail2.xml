@@ -7,15 +7,15 @@
 					<View >
 						<Label id="lblName" class="lblTitle" />
 						<Label class="lblSubTitle">Web:</Label>
-						<Label class="lblDetail">http://www.hotels.com</Label>
+						<Label id="lblWeb" class="lblDetail" />
 						<Label class="lblSubTitle">Teléfono:</Label>
-						<Label class="lblDetail">0-800-3333</Label>
+						<Label id="lblTelefono" class="lblDetail" />
 						<Label class="lblSubTitle">Dirección:</Label>
-						<Label class="lblDetail">Av. Libertador #484</Label>
-						<Label class="lblSubTitle">Ideal para:</Label>
-						<Label class="lblDetail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id tellus tempor lorem efficitur euismod et posuere risus. Nunc viverra ligula nec eros venenatis condimentum sit amet vitae leo. Vivamus augue mauris, volutpat a semper et, consectetur sit amet ex. Aliquam hendrerit ex ac eros iaculis congue. Nam ac placerat enim. Vestibulum rutrum, nisi vel ultricies porttitor, erat lectus facilisis nulla, at ornare felis enim sit amet tellus. Nam vel dolor eleifend erat laoreet gravida sit amet quis diam. Fusce vestibulum est leo, ac cursus nunc dictum at. Aenean sagittis condimentum nibh, non mollis lectus.</Label>
+						<Label id="lblDireccion" class="lblDetail" />
+						<Label class="lblSubTitle">Reseña:</Label>
+						<Label id="lblResenia" class="lblDetail" />
 						<Label class="lblSubTitle">Caracteristicas de las habitaciones:</Label>
-						<Label class="lblDetail">Sed sollicitudin mollis ultrices. Nunc luctus a odio ac consequat. Fusce facilisis porta nisi non sagittis. Donec porttitor, lacus a lobortis feugiat, ipsum lorem faucibus dui, ac fringilla ipsum urna eu nunc. Cras maximus purus augue, quis feugiat arcu dictum quis. Donec in vulputate lectus, dictum varius augue. Donec rhoncus felis faucibus magna sodales, suscipit malesuada mi maximus. Duis non diam sed turpis ultrices fermentum.</Label>
+						<Label id="lblHabitaciones" class="lblDetail" />
 					</View>
 				</ScrollView>
 			</Window>
@@ -26,23 +26,41 @@
 				<ScrollView id="scrollView">
 					<View >
 						<Label class="lblSubTitle">Habitación simple:</Label>
-						<Label id="lblPrice" class="lblDetail"/>
+						<View class="vwPrice">
+							<ImageView id='imgPrice'/>
+							<Label id="lblHSimple" class="lblDetail"/>
+							<Label class="lblCurrency">Bs</Label>
+						</View>
 						<Label class="lblSubTitle">Habitacion doble:</Label>
-						<Label class="lblDetail">0-800-3333</Label>
+						<View class="vwPrice">
+							<ImageView id='imgPrice'/>
+							<Label id="lblHDoble" class="lblDetail"/>
+							<Label class="lblCurrency">Bs</Label>
+						</View>
 						<Label class="lblSubTitle">Habitacion triple:</Label>
-						<Label class="lblDetail">0-800-3333</Label>
+						<View class="vwPrice">
+							<ImageView id='imgPrice'/>
+							<Label id="lblHTriple" class="lblDetail"/>
+							<Label class="lblCurrency">Bs</Label>
+						</View>
 						<Label class="lblSubTitle">Habitacion familiar:</Label>
-						<Label class="lblDetail">0-800-3333</Label>
+						<View class="vwPrice">
+							<ImageView id='imgPrice'/>
+							<Label id="lblHFamiliar" class="lblDetail"/>
+							<Label class="lblCurrency">Bs</Label>
+						</View>
 						<Label class="lblSubTitle">Suite matrimonial:</Label>
-						<Label class="lblDetail">Av. Libertador #484</Label>				
+						<View class="vwPrice">
+							<ImageView id='imgPrice'/>
+							<Label id="lblHMatrimonial" class="lblDetail"/>
+							<Label class="lblCurrency">Bs</Label>
+						</View>
 					</View>
 				</ScrollView>
 			</Window>
 		</Tab>
 		<Tab id="tabMapa" title="Map" >
-			<Window id="winMap">
-				
-			</Window>
+			<Window id="winMap"></Window>
 		</Tab>
 	</TabGroup>
 </Alloy>

@@ -7,17 +7,17 @@ Ti.API.info('args: ' + JSON.stringify(args));
 var NavGroupModule = Alloy.Globals.NavGroupModule,
     navGroupModule = new NavGroupModule($.rowHotel);
 
-var image = args.jsonData.urlPhoto,
+var image = args.jsonData.urlThumb,
     lblName = args.jsonData.name,
     lblDistance = args.jsonData.distance,
-    lblPrice = args.jsonData.price;
+    lblPrice = args.jsonData.tarifas.simple;
 //lblCurrency = args.jsonData.currency;
 
 $.imgAlbum.image = image;
 $.lblName.text = lblName;
 $.lblDistance.text = lblDistance;
 $.lblPrice.text = lblPrice;
-$.lblCurrency.text = "$us";
+$.lblCurrency.text = "Bs";
 
 var doClickRow = function(e) {
 	if (OS_IOS) {
