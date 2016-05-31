@@ -8,15 +8,15 @@ var NavGroupModule = Alloy.Globals.NavGroupModule,
     navGroupModule = new NavGroupModule($.rowHotel);
 
 var image = args.jsonData.urlThumb,
-    lblName = args.jsonData.name,
-    lblDistance = args.jsonData.distance,
-    lblPrice = args.jsonData.tarifas.simple;
+    name = args.jsonData.name,
+    distance = args.jsonData.distance,
+    price = args.jsonData.prices.single;
 //lblCurrency = args.jsonData.currency;
 
 $.imgAlbum.image = image;
-$.lblName.text = lblName;
-$.lblDistance.text = lblDistance;
-$.lblPrice.text = lblPrice;
+$.lblName.text = name;
+$.lblDistance.text = distance;
+$.lblPrice.text = price;
 $.lblCurrency.text = "Bs";
 
 var doClickRow = function(e) {

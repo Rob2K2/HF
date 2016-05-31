@@ -9,13 +9,13 @@
 						<Label class="lblSubTitle">Web:</Label>
 						<Label id="lblWeb" class="lblDetail" />
 						<Label class="lblSubTitle">Teléfono:</Label>
-						<Label id="lblTelefono" class="lblDetail" />
+						<Label id="lblPhone" class="lblDetail" />
 						<Label class="lblSubTitle">Dirección:</Label>
-						<Label id="lblDireccion" class="lblDetail" />
+						<Label id="lblAddress" class="lblDetail" />
 						<Label class="lblSubTitle">Reseña:</Label>
-						<Label id="lblResenia" class="lblDetail" />
+						<Label id="lblSummary" class="lblDetail" />
 						<Label class="lblSubTitle">Caracteristicas de las habitaciones:</Label>
-						<Label id="lblHabitaciones" class="lblDetail" />
+						<Label id="lblRooms" class="lblDetail" />
 					</View>
 				</ScrollView>
 			</Window>
@@ -28,31 +28,31 @@
 						<Label class="lblSubTitle">Habitación simple:</Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
-							<Label id="lblHSimple" class="lblDetail"/>
+							<Label id="lblSingleR" class="lblDetail"/>
 							<Label class="lblCurrency">Bs</Label>
 						</View>
 						<Label class="lblSubTitle">Habitacion doble:</Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
-							<Label id="lblHDoble" class="lblDetail"/>
+							<Label id="lblDoubleR" class="lblDetail"/>
 							<Label class="lblCurrency">Bs</Label>
 						</View>
 						<Label class="lblSubTitle">Habitacion triple:</Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
-							<Label id="lblHTriple" class="lblDetail"/>
-							<Label class="lblCurrency">Bs</Label>
+							<Label id="lblTripleR" class="lblDetail"/>
+							<Label class="lblCurrency">B</Label>
 						</View>
 						<Label class="lblSubTitle">Habitacion familiar:</Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
-							<Label id="lblHFamiliar" class="lblDetail"/>
+							<Label id="lblFamiliarR" class="lblDetail"/>
 							<Label class="lblCurrency">Bs</Label>
 						</View>
 						<Label class="lblSubTitle">Suite matrimonial:</Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
-							<Label id="lblHMatrimonial" class="lblDetail"/>
+							<Label id="lblMatrimonialR" class="lblDetail"/>
 							<Label class="lblCurrency">Bs</Label>
 						</View>
 					</View>
