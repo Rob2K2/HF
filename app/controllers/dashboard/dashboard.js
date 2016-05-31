@@ -5,6 +5,8 @@ var controls = require('controls/controls'),
     dbs = new configDB(),
     NavGroupModule = Alloy.Globals.NavGroupModule,
     navGroupModule = new NavGroupModule($.dashboard);
+    HttpClientModule = Alloy.Globals.HttpClientModule,
+    httpClientModule = new HttpClientModule(),
 
 $.dashboard.title = 'Dashboard';
 
@@ -201,7 +203,6 @@ var listOfAlbum = {
 		"distance" : "1 km",
 		"urlThumb" : "http://www.macaws.net/hf/images/diplomatThumb.jpg",
 		"urlImage" : "http://www.macaws.net/hf/images/diplomat.jpg",
-		"price" : "100",
 		"web" : "www.hoteldiplomat.com",
 		"phone" : "(591)-44235550",
 		"address" : "Av. Ballivian #3450",
@@ -230,7 +231,7 @@ var saveInfo = function(args) {
 var getListOfAlbums = function() {
 
 	var getListOfAlbums = Ti.App.Properties.getString('urlSearch');
-	getListOfAlbums = getListOfAlbums + 'term=mana&limit=6';
+	getListOfAlbums = getListOfAlbums;
 	Ti.API.info('-> Dentro de init/ getListOfAlbums url : ' + getListOfAlbums);
 	function callbackFunctionOnSuccess(jsonData) {
 		if ((jsonData != null || jsonData != undefined || jsonData.resultsCount > 0)) {
@@ -255,10 +256,10 @@ var getListOfAlbums = function() {
 };
 
 var init = function() {
-	dbs.deleteData();
-	saveInfo(listOfAlbum.results);
-	drawTableAlbums(listOfAlbum);
-	//getListOfAlbums();
+	//dbs.deleteData();
+	//saveInfo(listOfAlbum.results);
+	//drawTableAlbums(listOfAlbum);
+	getListOfAlbums();
 
 };
 
