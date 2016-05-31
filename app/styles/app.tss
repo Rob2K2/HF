@@ -74,7 +74,7 @@ overrode the settings with other TSS, XML, or JS settings:
 
 'Button':{
 	//backgroundColor: '#CC0000',
-	color: '#0000FF',
+	color: '#000000',
 	height: '44dp',
 	width: '85%',
 	bottom: '0dp',

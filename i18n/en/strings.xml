@@ -10,7 +10,7 @@
 	
 	
 	<!--Search-->
-	<string name="hTxtSearch">Enter word to search</string>
+	<string name="hTxtSearch">Enter place to search</string>
 	<string name="btnSearch">Search</string>
 
 	<!--Dashboard-->
@@ -25,5 +25,23 @@
 	<string name="networkConnectionTimeoutErrorMsg">Check your internet connection and try again.</string>
 	<string name="networkConnectionUnhandledErrorMsg">There was a problem connecting to the server. Please try again later.</string>
 	<string name="networkConnectionCannotConnectErrorMsg">Could not connect to server.</string>
+	
+	<!--RowHotel-->
+	<string name="lblDistance">Distance:</string>
+	<string name="lblSingleR">Single room:</string>
+	
+	<!--Detail2-->
+	<string name="lblWeb">Web:</string>
+	<string name="lblPhone">Phone:</string>
+	<string name="lblAddress">Address:</string>
+	<string name="lblSummary">Summary:</string>
+	<string name="lblRooms">Rooms:</string>
+	<string name="lblDoubleR">Double room:</string>
+	<string name="lblTripleR">Triple room:</string>
+	<string name="lblFamiliarR">Familiar room:</string>
+	<string name="lblMatrimonialR">Matrimonial room:</string>
+	
+	<!--Global-->
+	<string name="lblCurrency">$us</string>
 
 </resources>

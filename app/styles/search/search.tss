@@ -2,3 +2,9 @@
 	top: Alloy.Globals.loginTop,
 	height: Ti.UI.SIZE
 }
+
+'#btnSearch':{
+	top: '10dp',
+	backgroundColor: '#CC0000',
+	color: 'white'
+}

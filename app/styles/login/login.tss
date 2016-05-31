@@ -14,7 +14,9 @@
 }
 
 '#btnLogin':{
-	top: '10dp'
+	top: '10dp',
+	backgroundColor: '#CC0000',
+	color: 'white'
 }
 
 "#loginContainer": {

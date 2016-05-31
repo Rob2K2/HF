@@ -6,15 +6,15 @@
 				<ScrollView id="scrollView">
 					<View >
 						<Label id="lblName" class="lblTitle" />
-						<Label class="lblSubTitle">Web:</Label>
+						<Label class="lblSubTitle" text="L('lblWeb')"></Label>
 						<Label id="lblWeb" class="lblDetail" />
-						<Label class="lblSubTitle">Teléfono:</Label>
+						<Label class="lblSubTitle" text="L('lblPhone')"></Label>
 						<Label id="lblPhone" class="lblDetail" />
-						<Label class="lblSubTitle">Dirección:</Label>
+						<Label class="lblSubTitle" text="L('lblAddress')"></Label>
 						<Label id="lblAddress" class="lblDetail" />
-						<Label class="lblSubTitle">Reseña:</Label>
+						<Label class="lblSubTitle" text="L('lblSummary')"></Label>
 						<Label id="lblSummary" class="lblDetail" />
-						<Label class="lblSubTitle">Caracteristicas de las habitaciones:</Label>
+						<Label class="lblSubTitle" text="L('lblRooms')"></Label>
 						<Label id="lblRooms" class="lblDetail" />
 					</View>
 				</ScrollView>
@@ -25,35 +25,35 @@
 				<ImageView id='imgHotel2'/>
 				<ScrollView id="scrollView">
 					<View >
-						<Label class="lblSubTitle">Habitación simple:</Label>
+						<Label class="lblSubTitle" text="L('lblSingleR')"></Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
 							<Label id="lblSingleR" class="lblDetail"/>
-							<Label class="lblCurrency">Bs</Label>
+							<Label class="lblCurrency" text="L('lblCurrency')"></Label>
 						</View>
-						<Label class="lblSubTitle">Habitacion doble:</Label>
+						<Label class="lblSubTitle" text="L('lblDoubleR')"></Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
 							<Label id="lblDoubleR" class="lblDetail"/>
-							<Label class="lblCurrency">Bs</Label>
+							<Label class="lblCurrency" text="L('lblCurrency')"></Label>
 						</View>
-						<Label class="lblSubTitle">Habitacion triple:</Label>
+						<Label class="lblSubTitle" text="L('lblTripleR')"></Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
 							<Label id="lblTripleR" class="lblDetail"/>
-							<Label class="lblCurrency">B</Label>
+							<Label class="lblCurrency" text="L('lblCurrency')"></Label>
 						</View>
-						<Label class="lblSubTitle">Habitacion familiar:</Label>
+						<Label class="lblSubTitle" text="L('lblFamiliarR')"></Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
 							<Label id="lblFamiliarR" class="lblDetail"/>
-							<Label class="lblCurrency">Bs</Label>
+							<Label class="lblCurrency" text="L('lblCurrency')"></Label>
 						</View>
-						<Label class="lblSubTitle">Suite matrimonial:</Label>
+						<Label class="lblSubTitle" text="L('lblMatrimonialR')"></Label>
 						<View class="vwPrice">
 							<ImageView id='imgPrice'/>
 							<Label id="lblMatrimonialR" class="lblDetail"/>
-							<Label class="lblCurrency">Bs</Label>
+							<Label class="lblCurrency" text="L('lblCurrency')"></Label>
 						</View>
 					</View>
 				</ScrollView>
