@@ -10,7 +10,7 @@
 	
 	
 	<!--Search-->
-	<string name="hTxtSearch">Enter place to search</string>
+	<string name="hTxtSearch">Enter a city example: "Cochabamba, La Paz"</string>
 	<string name="btnSearch">Search</string>
 
 	<!--Dashboard-->
@@ -40,6 +40,10 @@
 	<string name="lblTripleR">Triple room:</string>
 	<string name="lblFamiliarR">Familiar room:</string>
 	<string name="lblMatrimonialR">Matrimonial room:</string>
+	<string name="tabInfo">INFORMATION</string>
+	<string name="tabPrice">PRICE</string>
+	<string name="tabMapa">MAP</string>
+	<string name="lblCity">City:</string>
 	
 	<!--Global-->
 	<string name="lblCurrency">$us</string>

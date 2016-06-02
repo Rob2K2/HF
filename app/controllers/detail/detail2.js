@@ -20,7 +20,8 @@ var image = args.rowData.jsonData.urlImage,
     doubleR = args.rowData.jsonData.doble,
     tripleR = args.rowData.jsonData.triple,
     familiarR = args.rowData.jsonData.familiar,
-    matrimonialR = args.rowData.jsonData.matrimonial;
+    matrimonialR = args.rowData.jsonData.matrimonial,
+    city = args.rowData.jsonData.city;
 
 $.imgHotel.image = image;
 $.imgHotel2.image = image;
@@ -35,6 +36,7 @@ $.lblDoubleR.text = doubleR;
 $.lblTripleR.text = tripleR;
 $.lblFamiliarR.text = familiarR;
 $.lblMatrimonialR.text = matrimonialR;
+$.lblCity.text = city;
 
 var init = function() {
 

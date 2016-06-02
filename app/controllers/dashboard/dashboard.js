@@ -1,16 +1,23 @@
 var args = arguments[0] || {};
 
 var controls = require('controls/controls'),
-    configDB = Alloy.Globals.configDB,
-    dbs = new configDB(),
+    //configDB = Alloy.Globals.configDB,
+    //dbs = new configDB(),
     NavGroupModule = Alloy.Globals.NavGroupModule,
-    navGroupModule = new NavGroupModule($.dashboard);
-HttpClientModule = Alloy.Globals.HttpClientModule,
-httpClientModule = new HttpClientModule(), Ti.API.info('args: ' + JSON.stringify(args));
+    navGroupModule = new NavGroupModule($.dashboard),
+    HttpClientModule = Alloy.Globals.HttpClientModule,
+    httpClientModule = new HttpClientModule();
 
-$.dashboard.title = 'Dashboard';
+Ti.API.info('args: ' + JSON.stringify(args));
+
+if (args.param != "") {
+	$.dashboard.title = args.param;
+} else {
+	$.dashboard.title = "Global search";
+}
 
 var loginClick = function(e) {
+
 	Ti.API.info('e-> ' + JSON.stringify(e));
 	if (e.index === 1) {
 		var loginWindows = Alloy.createController('login/login').getView();
@@ -19,7 +26,6 @@ var loginClick = function(e) {
 };
 
 var logout = function() {
-	//alert('press logout');
 
 	var param = {
 		buttonNames : ['Cancel', 'Accept'],
@@ -31,6 +37,7 @@ var logout = function() {
 };
 
 var searchClick = function(e) {
+
 	if (e.index === 1) {
 		var searchWindows = Alloy.createController('search/search').getView();
 		searchWindows.open();
@@ -49,6 +56,7 @@ var search = function() {
 };
 
 var openMap = function() {
+
 	var arg = {
 		containingWindow : navGroupModule
 	};
@@ -219,13 +227,13 @@ var listOfAlbum = {
 };
 
 var saveInfo = function(args) {
+
 	Ti.API.info('=> saveInfo() ' + JSON.stringify(args));
 	for (var a = 0; a < args.length; a++) {
 
 		dbs.addHotel(args[a]);
 	}
 	//dbs.getListSongsFromDB();
-
 };
 
 var getListOfAlbums = function() {
@@ -241,14 +249,7 @@ var getListOfAlbums = function() {
 
 	function callbackFunctionOnSuccess(jsonData) {
 		if ((jsonData != null || jsonData != undefined || jsonData.resultsCount > 0)) {
-			//Ti.API.info(' => ' + JSON.stringify(jsonData));
-			//Ti.API.info(' =>' + jsonData.resultCount);
-			//dbs.deleteData();
-			//saveInfo(jsonData.results);
 			drawTableAlbums(jsonData);
-			//var dataOffLine = dbs.getListSongsFromDB();
-			//drawTableAlbums(dataOffLine[0]);
-
 		} else {
 			Titanium.UI.createAlertDialog({
 				title : L('appTitle'),
@@ -262,11 +263,8 @@ var getListOfAlbums = function() {
 };
 
 var init = function() {
-	//dbs.deleteData();
-	//saveInfo(listOfAlbum.results);
-	//drawTableAlbums(listOfAlbum);
-	getListOfAlbums();
 
+	getListOfAlbums();
 };
 
 var drawTableAlbums = function(_data) {
@@ -291,6 +289,7 @@ var drawTableAlbums = function(_data) {
 };
 
 var openCoverFlow = function(e) {
+
 	var arg = {};
 	if (OS_IOS) {
 		arg = {
@@ -303,6 +302,7 @@ var openCoverFlow = function(e) {
 };
 
 var doClickTable = function() {
+
 	if (OS_IOS) {
 		var arg = {
 			containingWindow : navGroupModule
@@ -314,11 +314,13 @@ var doClickTable = function() {
 };
 
 $.dashboard.addEventListener('android:back', function() {
+
 	search();
 });
 
 init();
 
 if (OS_IOS) {
+
 	navGroupModule.open();
 }

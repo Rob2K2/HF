@@ -1,24 +1,20 @@
 '#rowHotel':{
 	//hasChild: false,
 	width: Ti.UI.FILL,
-	height: '100dp'
+	height: '100dp',
+	backgroundColor: 'red'
 }
 
 '#containerImg':{
 	top: 0,
 	left: 0,
 	width: '100dp',
-	height: '100dp',
-	borderColor: 'red'
+	height: '100dp'
 }
 '#containerSection':{
 	top: '0dp',
 	height: '100dp'
 	//borderColor: 'red'
-}
-
-'#vwFullRow':{
-	borderColor: 'red'
 }
 
 '#containerSection[platform=android]':{
@@ -41,10 +37,10 @@
 
 '.row1':{
 	font: {
-		fontSize: '16dp',
+		fontSize: '18dp',
 		fontweight: 'bold'
 	},
-	color: '#000000',
+	color: 'white',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	left: '10dp',
 	top: '6dp'
@@ -53,11 +49,11 @@
 	font: {
 		fontSize: '14dp'
 	},
-	color: '#999999',
+	color: '#DCDCDC',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	left: '10dp',
 	top: '6dp'
 }
 '.cGreen':{
-	color: '#006600'
+	color: '#DCDCDC'
 }

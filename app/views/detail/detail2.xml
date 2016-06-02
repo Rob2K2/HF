@@ -1,11 +1,13 @@
 <Alloy>
 	<TabGroup backgroundColor="white" >
-		<Tab id="tabInfo" title="Information" >
+		<Tab id="tabInfo" title="L('tabInfo')" >
 			<Window id="winInfo">
 				<ImageView id='imgHotel'/>
 				<ScrollView id="scrollView">
 					<View >
 						<Label id="lblName" class="lblTitle" />
+						<Label class="lblSubTitle" text="L('lblCity')"></Label>
+						<Label id="lblCity" class="lblDetail" />
 						<Label class="lblSubTitle" text="L('lblWeb')"></Label>
 						<Label id="lblWeb" class="lblDetail" />
 						<Label class="lblSubTitle" text="L('lblPhone')"></Label>
@@ -20,7 +22,7 @@
 				</ScrollView>
 			</Window>
 		</Tab>
-		<Tab id="tabPrice" title="Price" >
+		<Tab id="tabPrice" title="L('tabPrice')" >
 			<Window id="winPrice">
 				<ImageView id='imgHotel2'/>
 				<ScrollView id="scrollView">
@@ -59,7 +61,7 @@
 				</ScrollView>
 			</Window>
 		</Tab>
-		<Tab id="tabMapa" title="Map" >
+		<Tab id="tabMapa" title="L('tabMapa')" >
 			<Window id="winMap"></Window>
 		</Tab>
 	</TabGroup>

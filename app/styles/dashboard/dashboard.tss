@@ -1,6 +1,7 @@
 '#tableHotels' :{
 	top: 0,
-	scrollable: true
+	scrollable: true,
+	backgroundColor: 'white'
 }
 '#menuToolBar':{
 	bottom: 0
