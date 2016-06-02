@@ -16,11 +16,11 @@ var image = args.rowData.jsonData.urlImage,
     address = args.rowData.jsonData.address,
     summary = args.rowData.jsonData.summary,
     rooms = args.rowData.jsonData.rooms,
-    singleR = args.rowData.jsonData.prices.single,
-    doubleR = args.rowData.jsonData.prices.doble,
-    tripleR = args.rowData.jsonData.prices.triple,
-    familiarR = args.rowData.jsonData.prices.familiar,
-    matrimonialR = args.rowData.jsonData.prices.matrimonial;
+    singleR = args.rowData.jsonData.single,
+    doubleR = args.rowData.jsonData.doble,
+    tripleR = args.rowData.jsonData.triple,
+    familiarR = args.rowData.jsonData.familiar,
+    matrimonialR = args.rowData.jsonData.matrimonial;
 
 $.imgHotel.image = image;
 $.imgHotel2.image = image;

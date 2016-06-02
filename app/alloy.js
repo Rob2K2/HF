@@ -16,7 +16,7 @@
 // when connected or errored. if you do not use ACS in your
 // application as a client, you should remove this block
 
-Ti.App.Properties.setString('urlSearch', 'http://www.macaws.net/hf/hoteles.json');
+Ti.App.Properties.setString('urlSearch', 'http://www.macaws.net/hf/json/hotels.php');
 
 Alloy.Globals.HttpClientModule = require('./network/HttpClientModule');
 

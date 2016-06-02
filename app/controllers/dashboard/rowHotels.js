@@ -10,7 +10,7 @@ var NavGroupModule = Alloy.Globals.NavGroupModule,
 var image = args.jsonData.urlThumb,
     name = args.jsonData.name,
     distance = args.jsonData.distance,
-    price = args.jsonData.prices.single;
+    price = args.jsonData.single;
 
 $.imgAlbum.image = image;
 $.lblName.text = name;

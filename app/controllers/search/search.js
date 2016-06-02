@@ -47,9 +47,9 @@ $.search.addEventListener('open', function() {
 
 function doClick(e) {
 
-	//Ti.API.info($.username.value + ' - ' + $.password.value);
 	var arg = {
-		containingWindow : navGroupModule
+		containingWindow : navGroupModule,
+		param: $.txtSearch.value,
 	};
 	var dashboardWindow = Alloy.createController('dashboard/dashboard', arg).getView();
 	navGroupModule.openWindow(dashboardWindow, false);

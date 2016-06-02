@@ -2,7 +2,7 @@ function HttpClientModule() {
 
 	this.callWithHttpClient = function(endpointUrl, callbackFunctionOnSuccess, httpVerb, callParameters) {
 
-		Ti.API.info('****************** INSIDE CallWithHttpclient ************************');
+		//Ti.API.info('****************** INSIDE CallWithHttpclient ************************');
 
 		var serviceResponse = null,
 		    timeoutInMilliseconds = 120000,
@@ -15,14 +15,14 @@ function HttpClientModule() {
 		    emptyText = '',
 		    accessToken = '';
 
-		Ti.API.info('-> Dentro de HttpClientModule url : ' + endpointUrl);
+		//Ti.API.info('-> Dentro de HttpClientModule url : ' + endpointUrl);
 		try {
 			var httpClient = Ti.Network.createHTTPClient({
 				onload : function() {
 					try {
-						Ti.API.info('OnLoad');
+						//Ti.API.info('OnLoad');
 						serviceResponse = JSON.parse(this.responseText);
-						Ti.API.info('this.responseText:' + this.responseText);
+						//Ti.API.info('this.responseText:' + this.responseText);
 
 					} catch(err) {
 						showError(err);

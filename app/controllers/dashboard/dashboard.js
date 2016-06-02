@@ -5,8 +5,8 @@ var controls = require('controls/controls'),
     dbs = new configDB(),
     NavGroupModule = Alloy.Globals.NavGroupModule,
     navGroupModule = new NavGroupModule($.dashboard);
-    HttpClientModule = Alloy.Globals.HttpClientModule,
-    httpClientModule = new HttpClientModule(),
+HttpClientModule = Alloy.Globals.HttpClientModule,
+httpClientModule = new HttpClientModule(), Ti.API.info('args: ' + JSON.stringify(args));
 
 $.dashboard.title = 'Dashboard';
 
@@ -231,14 +231,20 @@ var saveInfo = function(args) {
 var getListOfAlbums = function() {
 
 	var getListOfAlbums = Ti.App.Properties.getString('urlSearch');
-	getListOfAlbums = getListOfAlbums;
+
+	if (args.param != "") {
+		getListOfAlbums = getListOfAlbums + "?city=" + args.param;
+	} else {
+		getListOfAlbums = getListOfAlbums;
+	}
 	Ti.API.info('-> Dentro de init/ getListOfAlbums url : ' + getListOfAlbums);
+
 	function callbackFunctionOnSuccess(jsonData) {
 		if ((jsonData != null || jsonData != undefined || jsonData.resultsCount > 0)) {
-			Ti.API.info(' => ' + JSON.stringify(jsonData));
-			Ti.API.info(' =>' + jsonData.resultCount);
-			dbs.deleteData();
-			saveInfo(jsonData.results);
+			//Ti.API.info(' => ' + JSON.stringify(jsonData));
+			//Ti.API.info(' =>' + jsonData.resultCount);
+			//dbs.deleteData();
+			//saveInfo(jsonData.results);
 			drawTableAlbums(jsonData);
 			//var dataOffLine = dbs.getListSongsFromDB();
 			//drawTableAlbums(dataOffLine[0]);
@@ -265,12 +271,14 @@ var init = function() {
 
 var drawTableAlbums = function(_data) {
 	Ti.API.info(' loadTableAlbums() data: ' + JSON.stringify(_data));
+	Ti.API.info(' data.lenght: ' + JSON.stringify(_data.length));
+
 	$.tableHotels.setData([]);
 
 	var dataList = [];
 
-	for (var i = 0; i < _data.results.length; i++) {
-		var rowSong = _data.results[i];
+	for (var i = 0; i < _data.length; i++) {
+		var rowSong = _data[i];
 
 		var params = {
 			jsonData : rowSong
